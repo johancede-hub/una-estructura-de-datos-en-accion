@@ -2,7 +2,7 @@
 mochila = [None, None, None, None]
 
 def mostrar_inventario():
-    print("\n--- INVENTARIO ACTUAL ---")
+    print("\n INVENTARIO ACTUAL")
     for i in range(len(mochila)):
         if mochila[i] is None:
             print(f"Slot [{i}]: [ VACÍO ]")
@@ -31,7 +31,7 @@ def quitar_objeto(objeto):
     print(f"El objeto '{objeto}' no se encuentra en la mochila.")
     return False
 
-# --- DEMONSTRACIÓN Y PRUEBAS ---
+# - DEMONSTRACIÓN Y PRUEBAS -
 
 mostrar_inventario()
 

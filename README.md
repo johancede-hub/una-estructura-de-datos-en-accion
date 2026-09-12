@@ -1,25 +1,30 @@
 # Una estructura de datos en acción
 
 ## Nombre de la aplicación: 
+
 - Inventario de Mochila de Supervivencia en un videojuego
 
 ## Descripción no técnica del problema: 
--En los videojuegos de aventura, los personajes tienen una mochila con una cantidad limitada de espacios (por ejemplo, 4 espacios fijos) para llevar sus objetos de supervivencia. Cada objeto ocupa una casilla específica. Si la mochila está llena y el jugador encuentra un nuevo objeto, no puede guardarlo a menos que decida usar, soltar o reemplazar uno de los que ya tiene. El programa debe permitir ver qué hay en la mochila, agregar un objeto si hay espacio libre, o avisar si ya no cabe nada más.
+-se necesita implementar una mochila con una cantidad limitada de espacios para llevar sus objetos de supervivencia. Cada objeto debe ocupar una casilla específica. Si la mochila está llena y el jugador encuentra un nuevo objeto, no puede guardarlo a menos que decida soltar o reemplazar uno de los que ya tiene. El programa debe permitir ver qué hay en la mochila, agregar un objeto si hay espacio libre, eliminar un aobjeto que ya no se requiera o avisar si ya no cabe nada más.
 
 ## Descripción de la solución: 
+
 -Un programa desarrollado en Python que simula la gestión de una mochila de 4 espacios. Utiliza un arreglo estático inicializado con valores vacíos (None) para controlar las casillas. El sistema cuenta con lógica para mostrar el inventario actual, buscar el primer espacio libre para agregar un nuevo objeto, y eliminar objetos cambiando su posición a vacía cuando el jugador lo requiera.
 
 ## Estructura de datos seleccionada:
+
 -Vector o Arreglo (Array) de tamaño estricto fijo
 
 ## Justificación técnica de la elección:
+
 - Organización y almacenamiento: Los datos se guardan de forma secuencial en posiciones fijas (índices del 0 al 3). Cada índice representa un "slot" o ranura específica dentro de la mochila.
 - Control de disponibilidad: El programa identifica que una casilla está vacía cuando contiene un valor nulo (null) u ocupada cuando ya almacena el nombre de un objeto.
 - Acceso y operaciones: El acceso a cualquier objeto es directo si se conoce su posición. La inserción se realiza buscando la primera posición libre y asignándole el objeto, mientras que la eliminación consiste en cambiar el valor de esa posición a null.
 - Ventajas: Representa de forma realista la limitación física de una mochila, ocupa un espacio de memoria contiguo y predecible, y es muy eficiente en cuanto a rendimiento porque no requiere reestructuraciones complejas.
-- Limitaciones: Su tamaño es estricto; si la mochila tiene 4 espacios, bajo ninguna circunstancia se podrá guardar un quinto objeto, obligando al usuario a liberar espacio primero. 
+- Limitaciones: Su tamaño es estricto; si la mochila tiene 4 espacios, bajo ninguna circunstancia se podrá guardar un quinto objeto, obligando al usuario a liberar espacio primero asi simulando un espacio fisico real.
 
 ## Análisis de lo que ocurriría al utilizar otra estructura: 
+
 -Estructura alternativa propuesta: Una Pila (Stack) implementada mediante un vector (comportamiento LIFO).
 
 ¿Qué pasaría si la usáramos?: La mochila perdería su flexibilidad de posiciones independientes. Solo podríamos agregar o retirar el último elemento que entró, quedando los demás elementos bloqueados en el fondo.
@@ -48,7 +53,7 @@ Caso 1 (Estado Inicial / Vacío): Se inicializa el arreglo con 4 espacios en Non
 
 Caso 2 (Funcionamiento Normal / Llenado secuencial): Se agregan cuatro objetos de manera consecutiva ("Arma", "Linterna", "Curas", "Alimentos"), comprobando que cada uno ocupe su respectivo índice del 0 al 3.
 
-Caso 3 (Caso Límite / Desbordamiento): Con el inventario lleno, se intenta agregar un quinto objeto ("Mapa"). El sistema valida la capacidad, detiene la inserción y arroja el mensaje de error correspondiente sin alterar los datos previos.
+Caso 3 (Caso Límite / Desbordamiento): Con el inventario lleno, si se intenta agregar un quinto objeto ("Mapa"). El sistema valida la capacidad, detiene la inserción y arroja el mensaje de error correspondiente sin alterar los datos previos.
 
 Caso 4 (Eliminación y recuperación de espacio): Con el inventario lleno y el quinto objeto bloqueado, se ejecuta quitar_objeto("Linterna") para liberar su ranura, transformándola nuevamente en None. Posteriormente, se reintenta agregar el "Mapa", comprobando que el sistema detecta el espacio libre y realiza la inserción de manera exitosa.
 
