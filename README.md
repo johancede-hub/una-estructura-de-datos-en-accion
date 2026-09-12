@@ -35,10 +35,27 @@ Operaciones de inserción/eliminación: El vector permite insertar, reemplazar o
 Idoneidad para el problema: El vector es ideal para una mochila de videojuego porque un jugador necesita usar o soltar elementos específicos sin importar el orden en que los recolectó. Usar una pila arruinaría la jugabilidad, ya que forzaría una dinámica de "último en entrar, primero en salir" que no aplica para la gestión libre de un inventario.
 
 ## Instrucciones para ejecutar el programa: 
--
+
+1. Abre tu entorno de desarrollo (como Visual Studio Code) y asegúrate de tener instalado Python.
+2. Abre la terminal integrada en la carpeta del proyecto.
+3. Ejecuta el archivo utilizando la ruta de tu intérprete configurado o mediante el comando correspondiente de tu entorno:
+   ```bash
+   python mochila.py
+
 ## Casos de prueba utilizados: 
--
+
+Caso 1 (Estado Inicial / Vacío): Se inicializa el arreglo con 4 espacios en None y se ejecuta mostrar_inventario(), verificando que la consola imprima todos los slots como vacíos.
+
+Caso 2 (Funcionamiento Normal / Llenado secuencial): Se agregan cuatro objetos de manera consecutiva ("Arma", "Linterna", "Curas", "Alimentos"), comprobando que cada uno ocupe su respectivo índice del 0 al 3.
+
+Caso 3 (Caso Límite / Desbordamiento): Con el inventario lleno, se intenta agregar un quinto objeto ("Mapa"). El sistema valida la capacidad, detiene la inserción y arroja el mensaje de error correspondiente sin alterar los datos previos.
+
+Caso 4 (Eliminación y recuperación de espacio): Con el inventario lleno y el quinto objeto bloqueado, se ejecuta quitar_objeto("Linterna") para liberar su ranura, transformándola nuevamente en None. Posteriormente, se reintenta agregar el "Mapa", comprobando que el sistema detecta el espacio libre y realiza la inserción de manera exitosa.
+
 ## Limitaciones y posibles mejoras: 
--
+
+- **Limitación:** El tamaño fijo de 4 elementos restringe la escalabilidad si el jugador adquiere una mejora de almacenamiento en el juego.
+- **Posible mejora:** Implementar una función de redimensionamiento dinámico o permitir la creación de una mochila con capacidad variable basada en parámetros de inicialización.
+
 ## Enlace al video: 
 - 
