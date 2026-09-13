@@ -63,4 +63,4 @@ Caso 4 (Eliminación y recuperación de espacio): Con el inventario lleno y el q
 - **Posible mejora:** Implementar una función de redimensionamiento dinámico o permitir la creación de una mochila con capacidad variable basada en parámetros de inicialización.
 
 ## Enlace al video: 
-- 
+- https://fumcc-my.sharepoint.com/:v:/g/personal/johansebastiancedenollanten_fumc_edu_co/IQAEjLkrC42tRr0deF3fiIKhAU1O89vQf_1mqgjv-avZkWo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=sJyspb
